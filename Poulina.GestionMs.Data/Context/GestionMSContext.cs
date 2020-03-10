@@ -54,6 +54,7 @@ namespace Poulina.GestionMs.Data.Context
           .WithMany(s => s.VersionLanguages)
            .HasForeignKey(p => p.LDV); //many to many
             base.OnModelCreating(modelBuilder);
+            hhhhhhhh
         }
     }
 }
