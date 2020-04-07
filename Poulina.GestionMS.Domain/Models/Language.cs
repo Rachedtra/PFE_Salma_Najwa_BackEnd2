@@ -7,13 +7,17 @@ namespace Poulina.GestionMS.Domain.Models
 {
     public class Language
     {
+  
         [Key]
-        public Guid LDV { get; set; }
+        public Guid IdLanguage { get; set; }
 
         public string Label { get; set; }
-        public ICollection<MS> Microservice { get; set; }
 
-        public ICollection<VersionLanguage> VersionLanguages { get; set; }
+        public ICollection<VersionLanguage> LanguageVersions { get; set; }
+
+        public ICollection<MS> Microservices { get; set; }
+
 
     }
 }
+

@@ -8,12 +8,11 @@ namespace Poulina.GestionMS.Domain.Models
     public class Domaine
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid IdDomaine { get; set; }
 
         public string Nom { get; set; }
-        public ICollection<MS> Microservice { get; set; }
 
-
+        public virtual ICollection<ProjetDomain> ProjetDomains { get; set; }
 
     }
 }
