@@ -7,7 +7,6 @@ namespace Poulina.GestionMS.Domain.Models
 {
    public class Projet
     {
-
         [Key]
 
         public Guid IdProjet { get; set; }
