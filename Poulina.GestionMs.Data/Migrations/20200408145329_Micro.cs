@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Poulina.GestionMs.Data.Migrations
 {
-    public partial class mig : Migration
+    public partial class Micro : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
