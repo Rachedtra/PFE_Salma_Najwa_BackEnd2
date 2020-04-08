@@ -17,7 +17,7 @@ namespace Poulina.GestionMS.Domain.Models
 
         public MS Microservices { get; set; }
 
-        public Guid MSFK { get; set; }
+        public Guid FK_MS { get; set; }
 
     }
 }

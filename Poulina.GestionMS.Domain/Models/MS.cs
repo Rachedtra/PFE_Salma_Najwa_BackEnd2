@@ -18,7 +18,7 @@ namespace Poulina.GestionMS.Domain.Models
 
         public ICollection<ProjetMS> ProjetMs { get; set; }
 
-        public ICollection<Methode> Methods { get; set; }
+        public virtual ICollection<Methode> Methods { get; set; }
 
         public Language Languages { get; set; }
 

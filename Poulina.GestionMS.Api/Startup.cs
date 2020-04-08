@@ -56,6 +56,13 @@ namespace Poulina.GestionMS.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
+            app.UseCors(options =>
+            options.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .SetIsOriginAllowed((host) => true)
+            .AllowCredentials()
+            .AllowAnyHeader());
             app.UseMvc();
         }
     }

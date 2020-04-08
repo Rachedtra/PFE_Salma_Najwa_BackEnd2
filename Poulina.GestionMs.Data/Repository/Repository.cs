@@ -65,7 +65,7 @@ namespace Poulina.GestionMs.Data.Repository
 
             _context.SaveChanges();
             return "Delete Done";
-            //   return "objet supprimé avec succés";
+            //   return "objet supprimé avec succés"; 
         }
         public IEnumerable<T> GetAll()
         {

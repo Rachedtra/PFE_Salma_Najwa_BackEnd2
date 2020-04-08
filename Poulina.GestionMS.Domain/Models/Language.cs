@@ -9,7 +9,7 @@ namespace Poulina.GestionMS.Domain.Models
     {
   
         [Key]
-        public Guid IdLanguage { get; set; }
+        public Guid IdL { get; set; }
 
         public string Label { get; set; }
 

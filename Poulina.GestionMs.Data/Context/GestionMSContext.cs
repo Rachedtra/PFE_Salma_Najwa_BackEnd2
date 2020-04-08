@@ -28,7 +28,7 @@ namespace Poulina.GestionMs.Data.Context
         {
             modelBuilder.Entity<MS>(entity => entity.HasKey(d => d.IdMS));
             modelBuilder.Entity<Versions>(entity => entity.HasKey(d => d.IDversion));
-            modelBuilder.Entity<Language>(entity => entity.HasKey(d => d.IdLanguage));
+            modelBuilder.Entity<Language>(entity => entity.HasKey(d => d.IdL));
             modelBuilder.Entity<Domaine>(entity => entity.HasKey(d => d.IdDomaine));
             modelBuilder.Entity<Methode>(entity => entity.HasKey(d => d.IdMethod));
             modelBuilder.Entity<Projet>(entity => entity.HasKey(d => d.IdProjet));
@@ -41,7 +41,7 @@ namespace Poulina.GestionMs.Data.Context
             modelBuilder.Entity<Methode>()
            .HasOne(e => e.Microservices)
            .WithMany(s => s.Methods)
-            .HasForeignKey(p => p.MSFK); //one to many
+            .HasForeignKey(p => p.FK_MS); //one to many
 
             //Microservice
             modelBuilder.Entity<MS>()
@@ -53,12 +53,12 @@ namespace Poulina.GestionMs.Data.Context
             modelBuilder.Entity<VersionLanguage>()
           .HasOne(e => e.Versions)
           .WithMany(s => s.LanguageVersions)
-           .HasForeignKey(p => p.IdVersion); //many to many
+           .HasForeignKey(p => p.FK_V); //many to many
 
             modelBuilder.Entity<VersionLanguage>()
           .HasOne(e => e.Languages)
           .WithMany(s => s.LanguageVersions)
-           .HasForeignKey(p => p.IdLanguage); //many to many
+           .HasForeignKey(p => p.FK_L); //many to many
             base.OnModelCreating(modelBuilder);
 
             //ProjetDomain
