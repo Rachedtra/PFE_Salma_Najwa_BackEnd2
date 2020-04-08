@@ -58,8 +58,13 @@ namespace GestionMS.Infr.Ioc
             services.AddScoped<IRequestHandler<GetAllQuery<Versions>, IEnumerable<Versions>>, GetAllHandler<Versions>>();
             services.AddScoped<IRequestHandler<GetQueryByID<Versions>, Versions>, GetByIdHandler<Versions>>();
 
+            services.AddScoped<IRepository<Projet>, Repository<Projet>>();
+            services.AddScoped<IRequestHandler<AddGeneric<Projet>, string>, AddHandler<Projet>>();
+            services.AddScoped<IRequestHandler<DeleteGeniric<Projet>, string>, DeleteHandler<Projet>>();
+            services.AddScoped<IRequestHandler<PutGeneric<Projet>, string>, PutHandler<Projet>>();
+            services.AddScoped<IRequestHandler<GetAllQuery<Projet>, IEnumerable<Projet>>, GetAllHandler<Projet>>();
+            services.AddScoped<IRequestHandler<GetQueryByID<Projet>, Projet>, GetByIdHandler<Projet>>();
 
-         
 
         }
     }

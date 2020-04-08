@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Poulina.GestionMs.Data.Context;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Poulina.GestionMS.Api
 {
@@ -31,6 +32,7 @@ namespace Poulina.GestionMS.Api
         public void ConfigureServices(IServiceCollection services)
 
         {
+
             services.AddMediatR(typeof(DependencyContrainer));
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddDbContext<GestionMSContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("Microservice")));
@@ -40,7 +42,10 @@ namespace Poulina.GestionMS.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc().AddJsonOptions(options =>
            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Managment MS", Version = "v1" });
+            });
         }
         private void RegisterService(IServiceCollection services)
         {
@@ -64,6 +69,11 @@ namespace Poulina.GestionMS.Api
             .AllowCredentials()
             .AllowAnyHeader());
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestion  Microservice V1");
+            });
         }
     }
 }
