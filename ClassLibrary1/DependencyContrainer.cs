@@ -51,6 +51,7 @@ namespace GestionMS.Infr.Ioc
             services.AddScoped<IRequestHandler<GetAllQuery<Methode>, IEnumerable<Methode>>, GetAllHandler<Methode>>();
             services.AddScoped<IRequestHandler<GetQueryByID<Methode>, Methode>, GetByIdHandler<Methode>>();
 
+
             services.AddScoped<IRepository<Versions>, Repository<Versions>>();
             services.AddScoped<IRequestHandler<AddGeneric<Versions>, string>, AddHandler<Versions>>();
             services.AddScoped<IRequestHandler<DeleteGeniric<Versions>, string>, DeleteHandler<Versions>>();
