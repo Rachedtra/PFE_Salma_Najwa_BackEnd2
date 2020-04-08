@@ -10,8 +10,8 @@ using Poulina.GestionMs.Data.Context;
 namespace Poulina.GestionMs.Data.Migrations
 {
     [DbContext(typeof(GestionMSContext))]
-    [Migration("20200408135705_mig")]
-    partial class mig
+    [Migration("20200408145329_Micro")]
+    partial class Micro
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
